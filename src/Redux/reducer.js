@@ -1,0 +1,14 @@
+import { ADD_COUNT } from "./action"
+import { ADD_TODO } from "./action"
+
+export const countReducer = (store, { type, payload }) => {
+    switch (type) {
+
+        case ADD_COUNT:
+            return { ...store, counter: store.counter + payload }
+        case ADD_TODO:
+            return { ...store, todos:[...store.todos,payload] }
+        default:
+            return store;
+    }
+}
